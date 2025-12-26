@@ -54,5 +54,7 @@ gtk theme Black and White copy to: ~/.themes/
 copy ~/.config/gtk-3.0 in the .config and rename to gtk-4.0
 
 Black GTK theme:https://www.gnome-look.org/p/2010116
+
 Kitty theme:Black Metal
+
 Similar wallpapers:https://dungeonsynth.proboards.com/thread/1164/dungeon-synth-album-covers-wallpapers
