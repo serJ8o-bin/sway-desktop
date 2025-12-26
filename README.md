@@ -15,7 +15,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct to file ~/.profile
 
 sway config copy to: ~/.config/sway/
 
-qt5/6 colorschemes copy to: ~/.config/qtXct/colors
+qt5/6 colorschemes copy black.conf to: ~/.config/qtXct/colors
 
 qreetd config copy to: /etc/greetd/
 
