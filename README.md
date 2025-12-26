@@ -14,10 +14,15 @@ export QT_QPA_PLATFORMTHEME=qt5ct to file ~/.profile
 
 
 sway config copy to: ~/.config/sway/
+
 qt5/6 colorschemes copy to: ~/.config/qtXct/colors
+
 qreetd config copy to: /etc/greetd/
+
 wallpaper: default in config ~/Pictures/wp.png
+
 cursor: ~/.icons/
+
 gtk theme: ~/.themes/
 
 
