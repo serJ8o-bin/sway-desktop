@@ -26,4 +26,4 @@ cursor: ~/.icons/
 gtk theme: ~/.themes/
 
 
-copy /home/serj/.config/gtk-3.0 in the .config and rename to gtk-4.0
+copy ~/.config/gtk-3.0 in the .config and rename to gtk-4.0
