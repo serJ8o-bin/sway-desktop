@@ -48,7 +48,7 @@ wallpaper: default in config ~/Pictures/wp.png
 
 cursor: ~/.icons/
 
-gtk theme: ~/.themes/
+gtk theme Black and White copy to: ~/.themes/
 
 
 copy ~/.config/gtk-3.0 in the .config and rename to gtk-4.0
