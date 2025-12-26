@@ -32,7 +32,6 @@ sway wofi swayidle swaylock thunar file-roller thunar-archive-plugin swaybg font
 
 
 
-add 
 export QT_QPA_PLATFORMTHEME=qt5ct to file ~/.profile
 
 
