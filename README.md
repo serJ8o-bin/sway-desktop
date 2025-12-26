@@ -43,7 +43,7 @@ qt5/6 colorschemes copy black.conf to: ~/.config/qtXct/colors
 
 qreetd config copy to: /etc/greetd/
 
-wallpaper: default in config ~/Pictures/wp.png
+wallpaper: default in config ~/Pictures/wp/wp.png
 
 cursor: ~/.icons/
 
