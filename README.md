@@ -28,7 +28,7 @@ This is my Sway desktop
 
 Needed packages(apt)
 
-sway wofi swayidle swaylock thunar file-roller thunar-archive-plugin swaybg fonts-font-awesome kitty greetd tuigreet grimshot qt5ct qt6ct mako-notifier fonts-noto-color-emoji fonts-junicode fonts-noto-core fonts-noto-extra fonts-font-awesome fonts-materialdesignicons-webfont xdg-desktop-portal xdg-desktop-portal-wlr nwg-look xwayland pipewire pipewire-pulse pavucontrol
+sway wofi swayidle swaylock thunar file-roller thunar-archive-plugin swaybg fonts-font-awesome foot greetd tuigreet grimshot qt5ct qt6ct mako-notifier fonts-noto-color-emoji fonts-junicode fonts-noto-core fonts-noto-extra fonts-font-awesome fonts-materialdesignicons-webfont xdg-desktop-portal xdg-desktop-portal-wlr nwg-look xwayland pipewire pipewire-pulse pavucontrol
 
 
 for steam:
