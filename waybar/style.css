@@ -1,0 +1,95 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+
+    font-family: "Old London", serif;
+    font-size: 16px; 
+}
+
+window#waybar {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#workspaces {
+    margin-left: 4px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: #666666;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    min-width: 14px;
+}
+
+#workspaces button.focused {
+    color: #ffffff;
+    background: #2a2a2a;
+}
+
+#workspaces button:hover {
+    background: #3a3a3a;
+    color: #ffffff;
+}
+
+#window {
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+
+#cpu {
+    color: #ffffff;
+    padding: 0 12px;
+    margin-right: 4px;
+}
+
+
+#custom-media {
+    color: #ffffff;
+    padding: 0 12px;
+    background: #111111;
+    margin-right: 4px;
+}
+
+#custom-media.playing {
+    color: #ffffff;
+}
+
+#custom-media.paused {
+    color: #666666;
+}
+
+
+#cava {
+    color: #ffffff;
+    padding: 0 8px;
+    margin-right: 8px;
+    font-family: monospace;
+    letter-spacing: -2px;
+}
+
+
+#cava.empty {
+    padding: 0;
+    margin: 0;
+}
+
+#clock {
+    color: #ffffff;
+    padding: 0 16px;
+    margin-right: 8px;
+}
+
+#tray {
+    margin-right: 8px;
+    padding: 0 8px;
+}
+
