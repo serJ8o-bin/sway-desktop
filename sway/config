@@ -225,21 +225,21 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-    output HDMI-A-1
-    # When the status_command prints a new line to stdout, swaybar updates.
+#bar {
+#    position top
+#    output HDMI-A-1
+#    # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
 
-    status_command while date +'ᛉ   ᛣ %Y-%m-%d %X '; do sleep 1; done
+ #   status_command while date +'ᛉ   ᛣ %Y-%m-%d %X '; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #000000
-        inactive_workspace #32323200 #32323200 #5c5c5c
-        focused_workspace  #444444 #333333 #ffffff
-    }
-}
+#    colors {
+ #       statusline #ffffff
+ #       background #000000
+ #       inactive_workspace #32323200 #32323200 #5c5c5c
+ #       focused_workspace  #444444 #333333 #ffffff
+  #  }
+#}
 
 include /etc/sway/config.d/*
 
@@ -261,12 +261,21 @@ bindsym $mod+z exec pavucontrol
 #exec_always pkill swaybg; swaybg -i /home/serj/Pictures/wp/wp.png -m fill
 
 exec_always pkill swaybg
-exec_always swaybg -o HDMI-A-1 -i /home/serj/Pictures/wp/wp.png -m fill
+exec_always pkill waybar
+exec_always swaybg -o HDMI-A-1 -i /home/serj/Pictures/wp/sp.jpg -m fill
 exec_always swaybg -o DP-1 -i /home/serj/Pictures/wp/wp.png -m fit
 
-#exec_always mako --background-color=#000000ff --text-color=#ffffff --border-color=#ffffff
+
 exec_always mako --background-color=#000000ff --text-color=#ffffff --border-color=#ffffff --border-size=2 --padding=10 --output HDMI-A-1
 
-
+exec_always waybar
 
 exec_always export QT_QPA_PLATFORMTHEME=qt5ct
+
+
+exec_always {
+    dbus-update-activation-environment --systemd \
+        DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+
+
+
