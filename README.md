@@ -8,7 +8,6 @@ This is my Sway desktop
 
 
 
-<img width="1919" height="1080" alt="neofetch" src="https://github.com/user-attachments/assets/6a640aaf-ace0-4d08-8c14-a77b910b17a1" />
 
 
 
