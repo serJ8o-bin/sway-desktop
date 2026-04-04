@@ -23,7 +23,7 @@ This is my Sway desktop
 
 
 
-
+## NOTES
 
 Needed packages(apt)
 
@@ -53,6 +53,8 @@ wallpaper: default in config ~/Pictures/wp/wp.png
 cursor: ~/.icons/
 
 gtk theme Black and White copy to: ~/.themes/
+
+sudo systemctl enable ly@tty1.service --force
 
 
 copy ~/.config/gtk-3.0 in the .config and rename to gtk-4.0
