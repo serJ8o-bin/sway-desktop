@@ -23,7 +23,7 @@ This is my Sway desktop
 
 
 
-## NOTES
+## NOTES(debian)
 
 Needed packages(apt)
 
@@ -32,15 +32,13 @@ sway wofi swayidle swaylock thunar file-roller thunar-archive-plugin swaybg font
 
 for steam:
 
-
 sudo dpkg --add-architecture i386
 
 
 
+
+
 export QT_QPA_PLATFORMTHEME=qt5ct to file ~/.profile
-
-
-
 
 sway config copy to: ~/.config/sway/
 
