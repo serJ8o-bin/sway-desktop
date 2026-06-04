@@ -1,5 +1,3 @@
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec dbus-update-activation-environment --systemd --all
 set $mod Mod4
 set $left h
 set $down j
@@ -10,9 +8,8 @@ set $menu wofi --show drun --allow-images --insensitive
 
 include /etc/sway/config-vars.d/*
 
-output HDMI-A-1 mode 1920x1080@100.000Hz pos 0 480
+output HDMI-A-1 mode 1920x1080@100.000Hz pos 0 480 
 output DP-1 mode 1920x1080 pos 1920 0 transform 270
-
 input * {
 
     xkb_layout "us,ru"
@@ -60,9 +57,10 @@ input * {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    bindsym $mod+b splith
+    
+    bindsym $mod+b exec killall -SIGUSR1 waybar
     bindsym $mod+v splitv
-
+ 
     bindsym $mod+e layout toggle split
 
     bindsym $mod+f fullscreen
@@ -76,18 +74,18 @@ input * {
 
     bindsym $mod+minus scratchpad show
 
-    bindsym $mod+Mod1+$left resize shrink width 10px
-    bindsym $mod+Mod1+$down resize grow height 10px
-    bindsym $mod+Mod1+$up resize shrink height 10px
-    bindsym $mod+Mod1+$right resize grow width 10px
+    bindsym $mod+Control+$left exec swaymsg resize grow left 10px || swaymsg resize shrink right 10px
+    bindsym $mod+Control+$down exec swaymsg resize grow down 10px || swaymsg resize shrink up 10px
+    bindsym $mod+Control+$up exec swaymsg resize grow up 10px || swaymsg resize shrink down 10px
+    bindsym $mod+Control+$right exec swaymsg resize grow right 10px || swaymsg resize shrink left 10px
 
     bindsym $mod+y gaps inner current minus 5
     bindsym $mod+u gaps inner current plus 5
 
-    bindsym --locked XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-    bindsym --locked XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-    bindsym --locked XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+    bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+    bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
@@ -99,7 +97,7 @@ include /etc/sway/config.d/*
 
 
 
-default_border pixel 1
+default_border pixel 2
 default_floating_border pixel 1
 client.focused          #ffffff #000000 #ffffff #ffffff #ffffff
 client.focused_inactive #444444 #000000 #444444 #444444 #444444
@@ -112,12 +110,19 @@ bindsym $mod+Shift+s exec sh -c 'grim -g "$(slurp)" - | tee $HOME/Pictures/scree
 bindsym $mod+p exec sh -c 'grim -o HDMI-A-1 $HOME/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'
 bindsym $mod+z exec pavucontrol
 
-exec_always killall -q swaybg; exec swaybg -o HDMI-A-1 -i /home/serj/Pictures/wp/sp.jpg -m fill -o DP-1 -i /home/serj/Pictures/wp/wp.png -m fit
-exec_always killall -q waybar; exec waybar
-#exec_always killall -q mako; exec mako --background-color=#000000ff --text-color=#ffffff --border-color=#ffffff --border-size=2 --padding=10 --output HDMI-A-1
+for_window [app_id="pavucontrol"] floating enable
 
-#exec_always lxqt-policykit-agent
+bar {
+    swaybar_command waybar
+}
 
+exec mako
+
+exec lxqt-policykit-agent
+
+#exec wl-paste --type text --watch cliphist store
+#exec wl-paste --type image --watch cliphist store
+#bindsym $mod+c exec cliphist list | wofi --dmenu -p "Clipboard" | cliphist decode | wl-copy
 
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
