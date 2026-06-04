@@ -6,9 +6,9 @@
     "spacing": 0,
     "margin": "0",
     
-    "modules-left": ["sway/workspaces"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["cpu","custom/media", "custom/cava", "clock", "tray"],    
+    "modules-left": ["sway/workspaces", ],
+    "modules-center": ["custom/rune", "sway/window", "custom/rune_inv"],
+    "modules-right": [ "mpris","cpu", "memory", "clock", "tray"],    
 
     "sway/window": {
         "format": "{}",
@@ -22,25 +22,34 @@
         "tooltip": false
     },
 
-
-"custom/media": {
-    "format": "{icon} {}",
-    "return-type": "json",
-    "format-icons": {
-        "Playing": "▶",
-        "Paused": "⏸", 
-        "Stopped": "."
+    "memory": {
+        "format": "RAM {used}G / {total}G",
+        "interval": 2,
+        "tooltip": false
     },
-    "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "hide-empty-text": true
-},
-    "custom/cava": {
-        "format": "{}",
-        "exec": "~/.config/waybar/cava.sh"
-}, 
+
+    "custom/rune": {
+        "format": "ᛉ",
+        "tooltip": false
+    },
+
+    "custom/rune_inv": {
+        "format": "ᛦ",
+        "tooltip": false
+    },
+
+
+    "mpris": {
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+        "player-icons": {
+            "default": "▶"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "tooltip": false
+    },
 
     "clock": {
         "format": "{:%d.%m %H:%M}",
