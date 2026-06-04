@@ -110,6 +110,7 @@ bindsym $mod+Shift+s exec sh -c 'grim -g "$(slurp)" - | tee $HOME/Pictures/scree
 bindsym $mod+p exec sh -c 'grim -o HDMI-A-1 $HOME/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'
 bindsym $mod+z exec pavucontrol
 
+
 for_window [app_id="pavucontrol"] floating enable
 
 bar {
