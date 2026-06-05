@@ -111,13 +111,15 @@ bindsym $mod+p exec sh -c 'grim -o HDMI-A-1 $HOME/Pictures/screenshot_$(date +%Y
 bindsym $mod+z exec pavucontrol
 
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="lxqt-policykit-agent"] floating enable
 
 bar {
     swaybar_command waybar
 }
 
 exec mako
-
+exec_always swaybg -o HDMI-A-1 -i ~/Pictures/Wallpapers/evening-sky.png
+exec_always swaybg -o DP-1 -i ~/Pictures/Wallpapers/wppp.png -m fit
 exec lxqt-policykit-agent
 
 #exec wl-paste --type text --watch cliphist store
